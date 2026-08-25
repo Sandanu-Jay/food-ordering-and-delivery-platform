@@ -1,0 +1,768 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#ef5b2a;--primary-dark:#d94719;--dark:#171717;--muted:#6b6b6b;--light:#fff8f4;--border:#ece7e3}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",Arial,sans-serif;color:var(--dark);background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button{font:inherit;border:0;cursor:pointer}
+.container{width:min(1180px,92%);margin:auto}
+
+/* Header */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #f0ece9}
+.nav{min-height:82px;display:flex;align-items:center;gap:30px}
+.logo{font-size:25px;font-weight:800;letter-spacing:1.5px;display:flex;flex-direction:column;line-height:1}
+.logo span{color:var(--primary)}
+.logo small{font-size:9px;letter-spacing:1px;color:#777;margin-top:7px;font-weight:600}
+.delivery-location{display:flex;align-items:center;gap:10px;padding-left:25px;border-left:1px solid var(--border)}
+.location-icon{font-size:25px;color:var(--primary)}
+.delivery-location small{display:block;color:#777;font-size:11px}
+.delivery-location strong{font-size:12px}
+.main-nav{display:flex;align-items:center;gap:24px;margin-left:auto}
+.main-nav a{font-size:13px;font-weight:600;color:#555;transition:.2s}
+.main-nav a:hover,.main-nav a.active{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.icon-btn,.cart-btn,.login-btn{background:transparent;color:#333}
+.icon-btn{font-size:26px}
+.cart-btn,.login-btn{font-size:13px;font-weight:600;position:relative}
+.cart-btn b{position:absolute;top:-9px;right:-8px;background:var(--primary);color:#fff;border-radius:50%;font-size:9px;width:17px;height:17px;display:grid;place-items:center}
+.login-btn{padding:11px 16px;border:1px solid #ddd;border-radius:10px}
+.menu-toggle{display:none;background:transparent;font-size:24px}
+
+/* Hero */
+.hero{background:linear-gradient(120deg,#fff8f3,#fff 65%);overflow:hidden}
+.hero-content{min-height:560px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
+.offer-badge{display:inline-flex;background:#fff0e9;color:var(--primary);font-size:11px;font-weight:800;padding:8px 12px;border-radius:30px;margin-bottom:18px}
+.hero h1{font-size:clamp(42px,5vw,66px);line-height:1.08;letter-spacing:-2.5px;max-width:650px}
+.hero h1 span{color:var(--primary)}
+.hero-text>p{color:var(--muted);max-width:510px;margin:20px 0 27px;font-size:16px}
+.hero-buttons{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:14px 23px;border-radius:10px;font-size:13px;font-weight:800;transition:.25s}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 25px rgba(239,91,42,.2)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-secondary{background:#fff;border:1px solid #ded8d4}
+.btn-secondary:hover{border-color:var(--primary);color:var(--primary)}
+.hero-stats{display:flex;gap:30px;margin-top:34px}
+.hero-stats div{display:flex;flex-direction:column}
+.hero-stats strong{font-size:16px}
+.hero-stats small{font-size:10px;color:#888;margin-top:2px}
+.hero-image-wrap{height:500px;position:relative;display:grid;place-items:center}
+.hero-circle{width:430px;height:430px;border-radius:50%;background:#ffe4d6;position:absolute}
+.hero-image{width:420px;height:420px;border-radius:50%;object-fit:cover;position:relative;z-index:2;border:12px solid rgba(255,255,255,.8);box-shadow:0 30px 70px rgba(70,40,20,.15)}
+.floating-card{position:absolute;z-index:4;background:#fff;border-radius:13px;padding:12px 15px;box-shadow:0 12px 35px rgba(0,0,0,.1);font-size:13px}
+.floating-card small{display:block;color:#888;font-size:9px;margin-left:22px}
+.rating-card{top:85px;left:20px}
+.delivery-card{right:5px;bottom:85px}
+
+/* Sections */
+.section{padding:70px 0}
+.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}
+.eyebrow{color:var(--primary);font-size:10px;font-weight:800;letter-spacing:1.5px}
+h2{font-size:30px;line-height:1.2;margin-top:6px;letter-spacing:-.8px}
+.view-all{font-size:12px;font-weight:700;color:var(--primary)}
+.category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}
+.category-card{background:#fff;border:1px solid var(--border);border-radius:15px;padding:20px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:.25s}
+.category-card span{font-size:30px}
+.category-card strong{font-size:12px}
+.category-card:hover,.category-card.active{border-color:#ffd1bd;background:#fff7f2;transform:translateY(-3px)}
+.popular{background:#faf9f8}
+.food-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.food-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.25s}
+.food-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.08)}
+.food-image{height:190px;position:relative;overflow:hidden}
+.food-image img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.food-card:hover .food-image img{transform:scale(1.05)}
+.heart{position:absolute;right:12px;top:12px;width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 4px 12px #0002;font-size:20px}
+.heart.liked{color:var(--primary)}
+.food-tag{position:absolute;left:12px;top:12px;background:var(--primary);color:#fff;padding:5px 9px;border-radius:20px;font-size:9px;font-weight:800}
+.food-info{padding:15px}
+.food-title-row{display:flex;justify-content:space-between;gap:5px}
+.food-title-row h3{font-size:14px}
+.food-title-row span{font-size:10px;color:#e99b00;font-weight:700}
+.food-info p{font-size:10px;color:#888;margin:7px 0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.food-bottom{display:flex;justify-content:space-between;align-items:center}
+.food-bottom strong{font-size:17px}
+.add-btn{background:#1d1d1d;color:#fff;padding:8px 13px;border-radius:8px;font-size:11px;font-weight:700}
+.add-btn:hover{background:var(--primary)}
+
+/* Offer */
+.offer-strip{padding:22px 0;background:#fff2e9}
+.offer-inner{display:flex;align-items:center;gap:20px}
+.offer-icon{width:55px;height:55px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:25px}
+.offer-inner>div:nth-child(2){flex:1}
+.offer-inner span{font-size:9px;color:var(--primary);font-weight:800;letter-spacing:1px}
+.offer-inner h3{font-size:18px}
+.offer-inner p{font-size:11px;color:#777}
+.btn-dark{background:#1b1b1b;color:#fff}
+
+/* Why */
+.center-heading{text-align:center;max-width:650px;margin:0 auto 35px}
+.center-heading p{font-size:13px;color:#888;margin-top:10px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feature{text-align:center;padding:28px 20px;border:1px solid var(--border);border-radius:16px}
+.feature>span{width:55px;height:55px;background:#fff1e9;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;font-size:25px}
+.feature h3{font-size:14px}
+.feature p{font-size:11px;color:#888;margin-top:7px}
+
+/* CTA */
+.cta{padding:45px 0;background:#1b1b1b;color:#fff}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta h2{font-size:34px}
+.cta p{color:#aaa;font-size:12px;margin-top:8px}
+
+/* Footer */
+.footer{background:#111;color:#fff;padding:55px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:45px}
+.footer .logo{margin-bottom:20px}
+.footer p,.footer a{color:#999;font-size:11px;margin-bottom:9px;display:block}
+.footer h4{font-size:13px;margin-bottom:17px}
+.footer a:hover{color:#fff}
+.socials{display:flex;gap:8px;margin-top:14px}
+.socials a{width:30px;height:30px;border:1px solid #444;border-radius:50%;display:grid;place-items:center}
+.copyright{text-align:center;border-top:1px solid #292929;margin-top:40px;padding-top:20px;color:#777;font-size:10px}
+
+/* Responsive */
+@media(max-width:1050px){
+  .delivery-location{display:none}.main-nav{gap:15px}.hero-content{min-height:500px}
+  .food-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:800px){
+  .main-nav{display:none}.menu-toggle{display:block}.nav-actions{margin-left:auto}
+  .nav-actions .search-toggle{display:none}
+  .hero-content{grid-template-columns:1fr;text-align:center;padding:50px 0}
+  .hero-text>p{margin-left:auto;margin-right:auto}.hero-buttons,.hero-stats{justify-content:center}
+  .hero-image-wrap{height:400px}.hero-circle{width:330px;height:330px}.hero-image{width:320px;height:320px}
+  .rating-card{left:5%;top:40px}.delivery-card{right:3%;bottom:45px}
+  .category-grid{grid-template-columns:repeat(3,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .nav{min-height:70px}.logo{font-size:20px}.cart-btn span,.login-btn span{display:none}
+  .hero h1{font-size:40px}.hero-stats{gap:16px}.hero-stats small{font-size:8px}
+  .section{padding:50px 0}h2{font-size:25px}
+  .category-grid{gap:9px}.category-card{padding:15px 5px}.category-card span{font-size:24px}
+  .food-grid{grid-template-columns:1fr}.food-image{height:220px}
+  .section-heading{align-items:start}.view-all{margin-top:20px}
+  .offer-inner{align-items:flex-start}.offer-inner .btn{padding:11px 13px;font-size:10px}
+  .features{grid-template-columns:1fr}.cta-inner{flex-direction:column;align-items:flex-start}.cta h2{font-size:27px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #1f1f1f;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f15a24;
+}
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-text {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.logo-text > span {
+    color: #f15a24;
+}
+
+.logo-text small {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #777;
+    margin-top: 4px;
+}
+
+/* ===== SANOVA HERO IMAGE ANIMATION ===== */
+
+.hero-image-wrap {
+    position: relative;
+    perspective: 1000px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.hero-image {
+    transition: 
+        transform 0.5s ease,
+        filter 0.5s ease,
+        box-shadow 0.5s ease;
+
+    cursor: pointer;
+    will-change: transform;
+
+    /* Floating animation */
+    animation: sanovaFloat 4s ease-in-out infinite;
+}
+
+/* Floating */
+@keyframes sanovaFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Mouse hover */
+.hero-image:hover {
+    animation-play-state: paused;
+    transform: scale(1.06) rotateY(-3deg) rotateX(2deg);
+    filter: brightness(1.08) saturate(1.12);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile touch */
+.hero-image:active {
+    animation-play-state: paused;
+    transform: scale(1.08);
+    filter: brightness(1.08) saturate(1.15);
+}
+
+/* Shine effect */
+.hero-image-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: 0.7s;
+
+    pointer-events: none;
+}
+
+.hero-image-wrap:hover::after {
+    left: 140%;
+}
+
+/* ===== SANOVA FEATURE ICONS ===== */
+
+.feature {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff4ee;
+    border-radius: 50%;
+
+    transition: all 0.35s ease;
+}
+
+.feature-icon img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+}
+
+.feature:hover .feature-icon {
+    background: #f15a24;
+    box-shadow: 0 12px 25px rgba(241, 90, 36, 0.25);
+}
+
+.feature:hover .feature-icon img {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+
+/* =========================================
+   SANOVA - SCROLL REVEAL ANIMATION
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hero animation */
+.hero-text {
+    animation: heroTextIn 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-image-wrap {
+    animation: heroImageIn 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes heroTextIn {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroImageIn {
+    from {
+        opacity: 0;
+        transform: translateX(70px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+
+/* Food cards */
+.food-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Feature animation */
+.feature {
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Category animation */
+.category-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Button effect */
+.btn {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================
+   SANOVA PREMIUM ORANGE HERO
+===================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(255, 190, 90, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #c83f12 0%,
+            #ed5a18 45%,
+            #ff7a1a 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* Soft background glow */
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: -180px;
+    right: -120px;
+
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+
+    filter: blur(10px);
+}
+
+
+/* Another glow */
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    bottom: -180px;
+    left: -100px;
+
+    background: rgba(255, 210, 120, 0.15);
+    border-radius: 50%;
+
+    filter: blur(5px);
+}
+
+
+/* Keep content above background */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Hero heading */
+.hero h1 {
+    color: #ffffff;
+}
+
+.hero h1 span {
+    color: #fff3df;
+}
+
+
+/* Hero paragraph */
+.hero p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* Offer badge */
+.offer-badge {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Primary button */
+.hero .btn-primary {
+    background: #ffffff;
+    color: #e65316;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hero .btn-primary:hover {
+    background: #fff5ea;
+    transform: translateY(-3px);
+}
+
+
+/* Secondary button */
+.hero .btn-secondary {
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+}
+
+.hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-3px);
+}
+
+
+/* Statistics */
+.hero-stats strong {
+    color: #ffffff;
+}
+
+.hero-stats small {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* Image circle */
+.hero-circle {
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 0 80px rgba(255, 220, 150, 0.25);
+}
+
+
+/* =====================================
+   SANOVA LIGHT / DARK MODE
+===================================== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg) scale(1.08);
+    background: #f15a24;
+    color: #ffffff;
+}
+
+.theme-toggle .moon {
+    display: none;
+}
+
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+body.dark-mode {
+    background: #111111;
+    color: #eeeeee;
+}
+
+
+/* Header */
+
+body.dark-mode .header {
+    background: #151515;
+    border-color: #292929;
+}
+
+body.dark-mode .logo {
+    color: #ffffff;
+}
+
+body.dark-mode .main-nav a {
+    color: #cccccc;
+}
+
+body.dark-mode .main-nav a:hover,
+body.dark-mode .main-nav a.active {
+    color: #f15a24;
+}
+
+body.dark-mode .delivery-location {
+    color: #ffffff;
+}
+
+body.dark-mode .delivery-location small {
+    color: #999999;
+}
+
+
+/* Theme button */
+
+body.dark-mode .theme-toggle {
+    background: #242424;
+    border-color: #444444;
+    color: #ffd166;
+}
+
+body.dark-mode .theme-toggle .sun {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .moon {
+    display: block;
+}
+
+
+/* Sections */
+
+body.dark-mode .categories,
+body.dark-mode .popular,
+body.dark-mode .why {
+    background: #111111;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .section-heading h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .section-heading p,
+body.dark-mode .center-heading p {
+    color: #aaaaaa;
+}
+
+
+/* Category cards */
+
+body.dark-mode .category-card {
+    background: #1c1c1c;
+    border-color: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark-mode .category-card:hover {
+    background: #252525;
+}
+
+
+/* Food cards */
+
+body.dark-mode .food-card {
+    background: #1c1c1c;
+    border-color: #2c2c2c;
+}
+
+body.dark-mode .food-info h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .food-info p {
+    color: #999999;
+}
+
+body.dark-mode .food-bottom strong {
+    color: #ffffff;
+}
+
+
+/* Features */
+
+body.dark-mode .feature h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .feature p {
+    color: #999999;
+}
+
+body.dark-mode .feature-icon {
+    background: #252525;
+}
+
+
+/* CTA */
+
+body.dark-mode .cta {
+    background: #191919;
+}
+
+body.dark-mode .cta h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .cta p {
+    color: #aaaaaa;
+}
+
+
+/* Footer */
+
+body.dark-mode .footer {
+    background: #080808;
+    color: #cccccc;
+}
+
+body.dark-mode .footer h4 {
+    color: #ffffff;
+}
+
+body.dark-mode .footer a,
+body.dark-mode .footer p {
+    color: #999999;
+}
+
+
+/* Smooth transition */
+
+body,
+.header,
+.categories,
+.popular,
+.why,
+.category-card,
+.food-card,
+.cta,
+.footer,
+.theme-toggle {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
+}

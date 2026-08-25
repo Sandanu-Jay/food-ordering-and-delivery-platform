@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sanova - Fresh food delivered to your door.">
+  <title>Sanova | Food Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">
+    <span class="logo-icon">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 12C10 18 10 29 20 33C30 37 42 34 45 43C48 52 39 57 29 56C22 55 17 52 14 48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="7"
+                  stroke-linecap="round"/>
+            <path d="M43 10V27M49 10V27M55 10V27M49 27V52"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linecap="round"/>
+        </svg>
+    </span>
+
+    <span class="logo-text">
+        SANOVA<span>.</span>
+        <small>Restaurant</small>
+    </span>
+</a>
+
+      <div class="delivery-location">
+        <span class="location-icon">⌖</span>
+        <div>
+          <small>Deliver to</small>
+          <strong>Main Street,Tangalle City</strong>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="sun">☀</span>
+    <span class="moon">☾</span>
+</button>
+        <button class="icon-btn search-toggle" aria-label="Search">⌕</button>
+        <button class="cart-btn" aria-label="Shopping cart">🛒 <span>Cart</span><b id="cartCount">0</b></button>
+        <button class="login-btn">♙ <span>Login</span></button>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="offer-badge"> 20% OFF ON YOUR FIRST ORDER</div>
+          <h1>Delicious Food,<br><span>Delivered to Your Door</span></h1>
+          <p>Order your favourite meals from Sanova and enjoy fresh, delicious food delivered fast.</p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">Order Now <span>→</span></a>
+            <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>4.8★</strong><small>Customer Rating</small></div>
+            <div><strong>30 min</strong><small>Average Delivery</small></div>
+            <div><strong>100%</strong><small>Fresh Food</small></div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap">
+          <div class="hero-circle"></div>
+          <div class="floating-card rating-card"> <strong>4.8</strong><small>Excellent</small></div>
+          <div class="floating-card delivery-card"> <strong>Fast Delivery</strong><small>At your doorstep</small></div>
+          <img
+            class="hero-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeR6xzIBXCGwo9FGNQRP-6LoERmdvq9zhUWtg8a5ChaQ&s=10"
+            alt="Restaurant">
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section categories" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">WHAT ARE YOU CRAVING?</span>
+            <h2>Our Menu Categories</h2>
+          </div>
+          <a href="#menu" class="view-all">View All →</a>
+        </div>
+
+        <div class="category-grid">
+          <button class="category-card active" data-category="Pizza"><span></span><strong>Pizza</strong></button>
+          <button class="category-card" data-category="Burgers"><span></span><strong>Burgers</strong></button>
+          <button class="category-card" data-category="Rice"><span></span><strong>Rice</strong></button>
+          <button class="category-card" data-category="Pasta"><span></span><strong>Pasta</strong></button>
+          <button class="category-card" data-category="Drinks"><span></span><strong>Drinks</strong></button>
+          <button class="category-card" data-category="Desserts"><span></span><strong>Desserts</strong></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR ITEMS -->
+    <section class="section popular">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CUSTOMER FAVOURITES</span>
+            <h2>Popular Food Items</h2>
+          </div>
+          <a href="#menu" class="view-all">View All →</a>
+        </div>
+
+        <div class="food-grid">
+          <article class="food-card" data-category="Pizza">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=85" alt="Margherita Pizza">
+              <button class="heart" aria-label="Favourite">♡</button>
+              <span class="food-tag">Popular</span>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Margherita Pizza</h3><span>★ 4.9</span></div>
+              <p>Fresh mozzarella, tomato & basil</p>
+              <div class="food-bottom"><strong>Rs 2000.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="Burgers">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85" alt="Chicken Burger">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Chicken Burger</h3><span>★ 4.8</span></div>
+              <p>Crispy chicken, cheese & fresh salad</p>
+              <div class="food-bottom"><strong>Rs 950.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="Rice">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=85" alt="Chicken Fried Rice">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Fried Rice</h3><span>★ 4.7</span></div>
+              <p>Wok-fried rice with chicken & vegetables</p>
+              <div class="food-bottom"><strong>Rs 1250.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+
+          <article class="food-card" data-category="Drinks">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=700&q=85" alt="Coca Cola">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Coca Cola</h3><span>★ 4.6</span></div>
+              <p>Chilled refreshing soft drink</p>
+              <div class="food-bottom"><strong>Rs 300.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+      
+      
+
+     <article class="food-card" data-category="Rice">
+            <div class="food-image">
+              <img src="https://thechutneylife.com/wp-content/uploads/2021/03/Thaibasilfriedrice-reshoot-3-scaled.jpg"  alt="Thai Rice">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Thai Rice</h3><span>★ 4.2</span></div>
+              <p>Freash Thailand experience for Everyone</p>
+              <div class="food-bottom"><strong>Rs 1300.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+     
+
+        <article class="food-card" data-category="Pasta">
+            <div class="food-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1p9Hv8ERgoZLf4r9qD5AqPLP2a6R9-Y_7N95kMXN7Vg&s=10"  alt="Pasta">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Pasta</h3><span>★ 4.8</span></div>
+              <p>Pasta with better experience</p>
+              <div class="food-bottom"><strong>Rs 700.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+       
+
+       <article class="food-card" data-category="Desserts">
+            <div class="food-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkB_YJG3z6XV_d6ZDKE7wX7RedXFreHczgoMZmP_1Lew&s=10"  alt="Desserts">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Fruit Salad</h3><span>★ 4.5</span></div>
+              <p>Freash fruits</p>
+              <div class="food-bottom"><strong>Rs 300.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+        
+
+      <article class="food-card" data-category="Pizza">
+            <div class="food-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EpQGI361HM3N1MvmcuRsKKOn-n68hwHba41HfkxehveJaK2macPpxZlT&s=10"  alt="Pizza">
+              <button class="heart" aria-label="Favourite">♡</button>
+            </div>
+            <div class="food-info">
+              <div class="food-title-row"><h3>Sausage Delight Pizza</h3><span>★ 4.6</span></div>
+              <p>premium qulity</p>
+              <div class="food-bottom"><strong>Rs 1700.00</strong><button class="add-btn">Add +</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section class="offer-strip" id="offers">
+      <div class="container offer-inner">
+        <div class="offer-icon"></div>
+        <div>
+          <span>LIMITED DELIVERY OFFER</span>
+          <h3>Free Delivery on orders</h3>
+          <p>Fast delivery at your doorstep.</p>
+        </div>
+        <a href="#menu" class="btn btn-dark">Order Now →</a>
+      </div>
+    </section>
+
+    <!-- WHY SANOVA -->
+    <section class="section why" id="about">
+      <div class="container">
+        <div class="center-heading">
+          <span class="eyebrow">WHY SANOVA?</span>
+          <h2>Everything You Need for a Great Meal</h2>
+          <p>We make ordering your favourite food simple, fast and enjoyable.</p>
+        </div>
+
+       <div class="features">
+
+    <div class="feature">
+        <span class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Fast Delivery">
+        </span>
+        <h3>Fast Delivery</h3>
+        <p>Hot and fresh meals delivered quickly to your doorstep.</p>
+    </div>
+
+    <div class="feature">
+        <span class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3082/3082055.png" alt="Fresh Food">
+        </span>
+        <h3>Fresh & Delicious</h3>
+        <p>Quality ingredients and freshly prepared meals.</p>
+    </div>
+
+    <div class="feature">
+        <span class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Easy Ordering">
+        </span>
+        <h3>Easy Ordering</h3>
+        <p>A simple and convenient online ordering experience.</p>
+    </div>
+
+    <div class="feature">
+        <span class="feature-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Secure Payment">
+        </span>
+        <h3>Secure Payment</h3>
+        <p>Safe and secure payment options for every order.</p>
+    </div>
+
+</div>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <span class="eyebrow">READY TO EAT?</span>
+          <h2>Hungry? Let’s Get Your Favourite Food!</h2>
+          <p>Choose your favourite meal and we'll bring it right to your door.</p>
+        </div>
+        <a href="#menu" class="btn btn-primary">Order Now →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo footer-logo">SANOVA<span>.</span><small>Restaurant</small></a>
+        <p>Fresh food, great taste and fast delivery — made for you.</p>
+      </div>
+      <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#menu">Menu</a><a href="#offers">Offers</a><a href="#about">About Us</a></div>
+      <div><h4>Customer Support</h4><a href="#">Help Center</a><a href="#">Delivery Info</a><a href="#">FAQs</a><a href="#">Privacy Policy</a></div>
+      <div><h4>Contact Us</h4><p>Main Street,Tangalle City</p><p>+94 70 58 76 103</p><p>sanova@gmail.com</p><div class="socials"><a href="#">f</a><a href="#">ig</a><a href="#">𝕏</a></div></div>
+    </div>
+    <div class="copyright">© 2026 Sanova Restaurant. All rights reserved.</div>
+  </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const elements = document.querySelectorAll(
+        ".section-heading, .category-card, .food-card, .feature, .offer-inner, .center-heading, .cta-inner"
+    );
+
+    elements.forEach((element, index) => {
+        element.classList.add("reveal");
+
+        // Small delay between cards
+        if (element.classList.contains("food-card") ||
+            element.classList.contains("category-card") ||
+            element.classList.contains("feature")) {
+
+            element.style.transitionDelay = (index % 4) * 0.08 + "s";
+        }
+    });
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+
+                    // Animate only once
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+        observer.observe(element);
+    });
+
+});
+</script>
+
+<script src="script.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
